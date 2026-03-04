@@ -132,6 +132,17 @@ export default function App() {
   const disabledStart = !topic.trim() || loading || !!threadId;
   const optionsDisabled = !topic.trim();
 
+  function handleStartNewResearch() {
+    reset();
+    setTopic("");
+    setMaxSources(5);
+    setMaxReportPoints(5);
+    setDecision("approve");
+    setSelectedUrls([]);
+    setExtraQueries("");
+    setAddCount(3);
+  }
+
   const searchResults = data?.search_results ?? [];
 
   const reportBody = useMemo(() => {
@@ -241,7 +252,7 @@ export default function App() {
                 <span>Topic / research question</span>
                 <input
                   type="text"
-                  placeholder="e.g. Latest developments in quantum computing"
+                  placeholder="Type Research Topic Here"
                   value={topic}
                   onChange={(e) => setTopic(e.target.value)}
                 />
@@ -362,7 +373,7 @@ export default function App() {
               <button
                 type="button"
                 className="secondary-btn full-width"
-                onClick={reset}
+                onClick={handleStartNewResearch}
               >
                 Start new research
               </button>
