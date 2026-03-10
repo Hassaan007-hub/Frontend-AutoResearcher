@@ -531,6 +531,24 @@ export default function App() {
                 : "Loading… use Refresh status above to fetch the latest progress."}
             </div>
           )}
+
+        <footer className="footer">
+          <span>
+            Built by <strong>Hassaan Azam</strong>
+          </span>
+          <span>
+            <a href="mailto:hassaanazam678@gmail.com">hassaanazam678@gmail.com</a>
+          </span>
+          <span>
+            <a
+              href="https://www.linkedin.com/in/hassaan7/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+          </span>
+        </footer>
       </main>
 
       {showWorkflow && (
