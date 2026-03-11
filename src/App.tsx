@@ -531,25 +531,39 @@ export default function App() {
                 : "Loading… use Refresh status above to fetch the latest progress."}
             </div>
           )}
-
-        <footer className="footer">
-          <span>
-            Built by <strong>Hassaan Azam</strong>
-          </span>
-          <span>
-            <a href="mailto:hassaanazam678@gmail.com">hassaanazam678@gmail.com</a>
-          </span>
-          <span>
-            <a
-              href="https://www.linkedin.com/in/hassaan7/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
-          </span>
-        </footer>
       </main>
+
+      <footer className="app-footer">
+        {(import.meta.env.VITE_Developer_Name ||
+          import.meta.env.VITE_Developer_Email ||
+          import.meta.env.VITE_Developer_LinkedIn) && (
+          <div className="developer-credit">
+            {import.meta.env.VITE_Developer_Name && (
+              <span className="developer-name">
+                {String(import.meta.env.VITE_Developer_Name).replace(/^"|"$/g, "")}
+              </span>
+            )}
+            {import.meta.env.VITE_Developer_Email && (
+              <a
+                href={`mailto:${String(import.meta.env.VITE_Developer_Email).replace(/^"|"$/g, "")}`}
+                className="developer-email"
+              >
+                {String(import.meta.env.VITE_Developer_Email).replace(/^"|"$/g, "")}
+              </a>
+            )}
+            {import.meta.env.VITE_Developer_LinkedIn && (
+              <a
+                href={String(import.meta.env.VITE_Developer_LinkedIn).replace(/^"|"$/g, "")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="developer-linkedin"
+              >
+                LinkedIn
+              </a>
+            )}
+          </div>
+        )}
+      </footer>
 
       {showWorkflow && (
         <div className="modal-backdrop" onClick={() => setShowWorkflow(false)}>

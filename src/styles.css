@@ -343,26 +343,6 @@ button {
   margin-top: 0.5rem;
 }
 
-.footer {
-  margin-top: 2rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(148, 163, 184, 0.25);
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.footer a {
-  color: var(--accent-strong);
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -395,6 +375,38 @@ button {
   margin: 0.75rem auto 0.5rem;
   border-radius: 0.75rem;
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.75);
+}
+
+.app-footer {
+  grid-column: 1 / -1;
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(5, 8, 22, 0.95);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.developer-credit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+}
+
+.developer-credit .developer-name {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.developer-credit a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.developer-credit a:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
 }
 
 @media (max-width: 960px) {
