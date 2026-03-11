@@ -533,37 +533,38 @@ export default function App() {
           )}
       </main>
 
-      <footer className="app-footer">
-        {(import.meta.env.VITE_Developer_Name ||
-          import.meta.env.VITE_Developer_Email ||
-          import.meta.env.VITE_Developer_LinkedIn) && (
-          <div className="developer-credit">
-            {import.meta.env.VITE_Developer_Name && (
-              <span className="developer-name">
-                {String(import.meta.env.VITE_Developer_Name).replace(/^"|"$/g, "")}
-              </span>
-            )}
-            {import.meta.env.VITE_Developer_Email && (
+      {import.meta.env.VITE_Developer_Name && (
+        <footer className="app-footer">
+          Built by{" "}
+          <span className="developer-name">
+            {String(import.meta.env.VITE_Developer_Name).replace(/^"|"$/g, "")}
+          </span>
+          {import.meta.env.VITE_Developer_Email && (
+            <>
+              {" · "}
               <a
                 href={`mailto:${String(import.meta.env.VITE_Developer_Email).replace(/^"|"$/g, "")}`}
-                className="developer-email"
+                className="developer-link"
               >
                 {String(import.meta.env.VITE_Developer_Email).replace(/^"|"$/g, "")}
               </a>
-            )}
-            {import.meta.env.VITE_Developer_LinkedIn && (
+            </>
+          )}
+          {import.meta.env.VITE_Developer_LinkedIn && (
+            <>
+              {" · "}
               <a
                 href={String(import.meta.env.VITE_Developer_LinkedIn).replace(/^"|"$/g, "")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="developer-linkedin"
+                className="developer-link"
               >
                 LinkedIn
               </a>
-            )}
-          </div>
-        )}
-      </footer>
+            </>
+          )}
+        </footer>
+      )}
 
       {showWorkflow && (
         <div className="modal-backdrop" onClick={() => setShowWorkflow(false)}>
